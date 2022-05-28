@@ -74,12 +74,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     context.read<AuthBloc>().state.maybeWhen(
       orElse: () {
         Future.delayed(const Duration(milliseconds: 600), () {
-          context.router.push(const SignUpRoute());
+          context.router.popAndPush(const SignUpRoute());
         });
       },
       signedIn: (user) {
         Future.delayed(const Duration(seconds: 1), () {
-          context.router.push(const HomeRoute());
+          context.router.popAndPush(const HomeRoute());
         });
       },
     );
