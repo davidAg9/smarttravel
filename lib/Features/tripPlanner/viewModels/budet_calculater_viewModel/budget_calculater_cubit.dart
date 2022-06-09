@@ -9,7 +9,11 @@ class BudgetCalculaterCubit extends Cubit<BudgetCalculaterState> {
   BudgetCalculaterCubit() : super(const BudgetCalculaterState.initial());
 
   void budgetMe(
-      double amount, double spendrate, List<double> hotelPrices, double transportationAvg) {
+    double amount,
+    double spendrate,
+    List<double> hotelPrices,
+    double transportationAvg,
+  ) {
     final avg = hotelPrices.fold<double>(0, (previousValue, element) {
           return previousValue + element;
         }) /

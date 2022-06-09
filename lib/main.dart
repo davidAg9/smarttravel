@@ -15,9 +15,8 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  final storage = await HydratedStorage.build(
-    storageDirectory: await getApplicationDocumentsDirectory(),
-  );
+  final storage =
+      await HydratedStorage.build(storageDirectory: await getApplicationDocumentsDirectory());
   HydratedBlocOverrides.runZoned(
     () => runApp(
       Sizer(
